@@ -1,6 +1,6 @@
 Name:           m2vrequantiser
 Version:        20030929
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        MPEG-2 stream requantizer
 
 Group:          Applications/Multimedia
@@ -41,6 +41,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Sun Mar 29 2009 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info> - 20030929-4
+- rebuild for new F11 features
+
 * Sat Sep 20 2008 Thorsten Leemhuis <fedora [AT] leemhuis [DOT] info - 20030929-3
 - rebuild for rpmfusion
 
