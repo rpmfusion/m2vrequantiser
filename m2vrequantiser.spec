@@ -1,6 +1,6 @@
 Name:           m2vrequantiser
 Version:        20030929
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        MPEG-2 stream requantizer
 
 Group:          Applications/Multimedia
@@ -41,6 +41,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Thu Aug 31 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 20030929-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Sun Mar 19 2017 RPM Fusion Release Engineering <kwizart@rpmfusion.org> - 20030929-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_26_Mass_Rebuild
 
