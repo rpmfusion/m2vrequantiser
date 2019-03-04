@@ -3,11 +3,10 @@ Version:        20030929
 Release:        12%{?dist}
 Summary:        MPEG-2 stream requantizer
 
-Group:          Applications/Multimedia
 License:        GPL+
 URL:            http://www.metakine.com/
 Source0:        http://www.xeatre.tv/community/burn/contrib/M2VRequantizer.tar.gz
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+BuildRequires:  gcc
 
 %description
 M2VRequantiser is a tool to requantize MPEG-2 streams without
@@ -24,17 +23,11 @@ rm -f requant
 
 
 %install
-rm -rf $RPM_BUILD_ROOT
 install -Dpm 755 requant $RPM_BUILD_ROOT%{_bindir}/requant
 ln -s requant $RPM_BUILD_ROOT%{_bindir}/M2VRequantiser
 
 
-%clean
-rm -rf $RPM_BUILD_ROOT
-
-
 %files
-%defattr(-,root,root,-)
 %{_bindir}/M2VRequantiser
 %{_bindir}/requant
 
