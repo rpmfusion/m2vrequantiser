@@ -1,11 +1,14 @@
 Name:           m2vrequantiser
-Version:        20030929
-Release:        14%{?dist}
+Epoch:          1
+Version:        1.1
+Release:        1%{?dist}
 Summary:        MPEG-2 stream requantizer
 
-License:        GPL+
-URL:            http://www.metakine.com/
-Source0:        http://www.xeatre.tv/community/burn/contrib/M2VRequantizer.tar.gz
+License:        GPLv2
+URL:            https://launchpad.net/m2vrequantiser
+Source0:        %{url}/trunk/%{version}/+download/M2VRequantiser-v%{version}.tar.gz
+Patch0:         make_dest_strip.patch
+
 BuildRequires:  gcc
 
 %description
@@ -14,26 +17,28 @@ recompressing.
 
 
 %prep
-%setup -q -n M2VRequantizer
-rm -f requant
+%autosetup -n M2VRequantiser-v%{version}
 
 
 %build
-%{__cc} $RPM_OPT_FLAGS -lm -o requant main.c
+%set_build_flags
+%make_build
 
 
 %install
-install -Dpm 755 requant $RPM_BUILD_ROOT%{_bindir}/requant
-ln -s requant $RPM_BUILD_ROOT%{_bindir}/M2VRequantiser
+%make_install PREFIX=%{_prefix}
 
 
 %files
+%doc README.txt
+%license LICENSE.txt
 %{_bindir}/M2VRequantiser
-%{_bindir}/requant
-
 
 
 %changelog
+* Thu Mar 05 2020 leigh123linux <leigh123linux@googlemail.com> - 1:1.1-1
+- Update to 1.1 release
+
 * Wed Feb 05 2020 RPM Fusion Release Engineering <leigh123linux@gmail.com> - 20030929-14
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
