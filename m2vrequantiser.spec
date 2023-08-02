@@ -1,7 +1,7 @@
 Name:           m2vrequantiser
 Epoch:          1
 Version:        1.1
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        MPEG-2 stream requantizer
 
 License:        GPLv2
@@ -36,6 +36,9 @@ recompressing.
 
 
 %changelog
+* Wed Aug 02 2023 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1:1.1-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_39_Mass_Rebuild
+
 * Sun Aug 07 2022 RPM Fusion Release Engineering <sergiomb@rpmfusion.org> - 1:1.1-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild and ffmpeg
   5.1
